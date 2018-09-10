@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { remove } from './expenseActions';
+import styles from './ExpenseItem.css';
 
 class ExpenseItem extends Component {
   static propTypes = {
@@ -14,7 +15,7 @@ class ExpenseItem extends Component {
     const { expense, onEdit, remove } = this.props;
 
     return (
-      <section>
+      <section className={styles.expenseItem}>
         <p>Name: {expense.name}</p>
         <p>Price: ${expense.price}</p>
         <button name="edit" onClick={onEdit}>Edit</button>
